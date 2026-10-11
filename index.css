@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #eaeef6;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .font-mono, .tabular-nums {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media print {
+  /* When #__app_print_container__ exists, hide the rest of the application completely */
+  body:has(#__app_print_container__) > *:not(#__app_print_container__) {
+    display: none !important;
+  }
+
+  /* Default: hide app shell, sidebars, topbars, buttons */
+  header, nav, aside, footer, .no-print, button, input, select {
+    display: none !important;
+  }
+
+  /* Unset modal fixed overlays on print */
+  .fixed, [class*="fixed"] {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+  }
+
+  [class*="backdrop-blur"], [class*="bg-slate-900/"] {
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: #000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Thermal Receipt Mode */
+  body:has(#printable-receipt) #printable-receipt,
+  #printable-receipt {
+    visibility: visible !important;
+    display: block !important;
+    width: 80mm !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* A4 Invoice Mode */
+  body:has(#printable-invoice) #printable-invoice,
+  #printable-invoice {
+    visibility: visible !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 15px !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* A4 Purchase Bill Mode */
+  body:has(#printable-purchase) #printable-purchase,
+  #printable-purchase {
+    visibility: visible !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 15px !important;
+    background: white !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* General Table printing */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th, td {
+    padding: 6px 8px !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+}
