@@ -1,0 +1,6 @@
+{
+  "name": "Projectile POS & Inventory",
+  "description": "Multi-warehouse POS, Inventory, and Accounting web application with sales, purchases, warehouse stock management, accounts ledger, and 25 enterprise reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
